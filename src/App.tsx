@@ -1,5 +1,6 @@
-import './App.css';
-import { useState } from 'react';
+import { useState } from "react";
+
+import "./App.css";
 
 function App() {
   const [x, setX] = useState(0);
@@ -8,7 +9,7 @@ function App() {
   }
   return (
     <div>
-      <button onClick={handleClick}>{x}</button>
+      <button onClick={handleClick}>push {x} push</button>
     </div>
   );
 }
