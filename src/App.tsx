@@ -1,7 +1,7 @@
 import './App.css';
 
 function App() {
-  return <div>привет гребаный мир</div>;
+  return <div>привет добрый мир</div>;
 }
 
 export default App;
