@@ -4,7 +4,7 @@ import { useState } from 'react';
 function App() {
   const [x, setX] = useState(0);
   function handleClick() {
-    setX((prev) => Math.floor(Math.random() * 100));
+    setX(Math.floor(Math.random() * 100));
   }
   return (
     <div>
