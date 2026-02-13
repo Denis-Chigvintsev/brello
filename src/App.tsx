@@ -9,7 +9,9 @@ function App() {
   }
   return (
     <div>
-      <button onClick={handleClick}>push {x} push</button>
+      <button style={{ border: "1px solid red ", background: "cyan" }} onClick={handleClick}>
+        push {x} push
+      </button>
     </div>
   );
 }
