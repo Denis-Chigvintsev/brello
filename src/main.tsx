@@ -16,7 +16,7 @@ import App from "./App.tsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
-  <MantineProvider>
+  <MantineProvider defaultColorScheme="auto">
     <App />
   </MantineProvider>,
 );
