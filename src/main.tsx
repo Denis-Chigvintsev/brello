@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 
-import { MantineProvider } from "@mantine/core";
+import { MantineProvider, createTheme } from "@mantine/core";
 
 // ...
 import "@mantine/core/styles.css";
@@ -12,11 +12,14 @@ import "@mantine/tiptap/styles.css";
 
 // ...
 
+import "../node_modules/modern-normalize/modern-normalize.css";
 import App from "./App.tsx";
-import "./index.css";
+import "./inter.font.css";
+
+const theme = createTheme({ fontFamily: "Inter" });
 
 createRoot(document.getElementById("root")!).render(
-  <MantineProvider defaultColorScheme="auto">
+  <MantineProvider defaultColorScheme="auto" theme={theme} withGlobalClasses>
     <App />
   </MantineProvider>,
 );

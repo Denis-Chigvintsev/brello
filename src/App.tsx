@@ -1,17 +1,10 @@
-import { useState } from "react";
-
-import "./App.css";
+import "./App.module.css";
+import AppShellBrello from "./Components/AppShellBrello/AppShellBrello";
 
 function App() {
-  const [x, setX] = useState(0);
-  function handleClick() {
-    setX(Math.floor(Math.random() * 100));
-  }
   return (
     <div>
-      <button style={{ border: "1px solid red ", background: "cyan" }} onClick={handleClick}>
-        push {x} push
-      </button>
+      <AppShellBrello />
     </div>
   );
 }
