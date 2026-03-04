@@ -26,7 +26,7 @@ function LightDarkButton() {
         </Tooltip>
       )}
       {computedColorScheme == "light" && (
-        <Tooltip label="дневной режим">
+        <Tooltip label="ночной режим">
           <FaMoon />
         </Tooltip>
       )}
