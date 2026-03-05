@@ -18,12 +18,12 @@ function KanbanColumn({ id, cards, title, color }: KanbanList) {
               {cards.map(({ id, title }, index) => (
                 <KanbanCard key={id} id={id} index={index} title={title} />
               ))}
+              {provided.placeholder}
               <Textarea placeholder="Start making new card here" />
               <Button fullWidth color="black" bg="blue.1" variant="light" mt="sm" leftSection={<IconPlus size={14} />}>
                 Add card
               </Button>
             </Stack>
-            {provided.placeholder}
           </div>
         )}
       </Droppable>
