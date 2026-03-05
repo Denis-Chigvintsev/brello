@@ -9,7 +9,7 @@ import LightDarkButton from "../LightDarkButton/LightDarkButton";
 
 function AppShellBrello() {
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
-  const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
+  const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(false);
 
   const theme = useMantineTheme();
 
