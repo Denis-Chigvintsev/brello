@@ -6,9 +6,11 @@ function KanbanCard({ key, id, index, title }: { key: string; id: string; index:
     <Draggable draggableId={id} key={key} index={index}>
       {(provided) => (
         <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-          <Paper p="md" shadow="xs">
-            <Text>{title}</Text>
-          </Paper>
+          <div>
+            <Paper p="md">
+              <Text>{title}</Text>
+            </Paper>
+          </div>
         </div>
       )}
     </Draggable>
