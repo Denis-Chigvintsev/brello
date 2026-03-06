@@ -6,17 +6,18 @@ import type { KanbanList } from "../../miscellaneous/kanbanTypes";
 import KanbanCard from "./KanbanCard";
 
 function KanbanColumn({ id, cards, title, color }: KanbanList) {
+  console.log(id);
   return (
     <Paper p="md" bg={color} radius="md" w="100%">
       <Title order={4} mb="md">
         {title}
       </Title>
-      <Droppable droppableId={id} key={id}>
+      <Droppable droppableId={title} key={title}>
         {(provided) => (
           <div {...provided.droppableProps} ref={provided.innerRef}>
             <Stack gap="xs">
-              {cards.map(({ id, title }, index) => (
-                <KanbanCard key={id} id={id} index={index} title={title} />
+              {cards.map((card, index) => (
+                <KanbanCard key={card.id} id={card.id} index={index} title={card.title} />
               ))}
               {provided.placeholder}
               <Textarea placeholder="Start making new card here" />
