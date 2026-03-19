@@ -1,7 +1,10 @@
+// Supports weights 100-900
+// Supports weights 100-900
 import { createRoot } from "react-dom/client";
 
 import { MantineProvider, createTheme } from "@mantine/core";
 
+import "@fontsource-variable/inter/opsz.css";
 // ...
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
@@ -14,9 +17,8 @@ import "@mantine/tiptap/styles.css";
 
 import "../node_modules/modern-normalize/modern-normalize.css";
 import App from "./App.tsx";
-import "./inter.font.css";
 
-const theme = createTheme({ fontFamily: "Inter" });
+const theme = createTheme({ fontFamily: "Inter Variable" });
 
 createRoot(document.getElementById("root")!).render(
   <MantineProvider defaultColorScheme="auto" theme={theme} withGlobalClasses>

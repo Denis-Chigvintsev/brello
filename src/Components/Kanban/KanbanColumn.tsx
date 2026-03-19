@@ -1,9 +1,9 @@
 import { Droppable } from "@hello-pangea/dnd";
-import { Button, /*type MantineColor,*/ Paper, Stack, Textarea, Title } from "@mantine/core";
-import { IconPlus } from "@tabler/icons-react";
+import { /*type MantineColor,*/ Paper, Stack, Title } from "@mantine/core";
 
 import type { KanbanList } from "../../miscellaneous/kanbanTypes";
 import KanbanCard from "./KanbanCard";
+import KanbanCreateCard from "./KanbanCreateCard";
 
 function KanbanColumn({ id, cards, title, color }: KanbanList) {
   console.log(id);
@@ -20,10 +20,7 @@ function KanbanColumn({ id, cards, title, color }: KanbanList) {
                 <KanbanCard key={card.id} id={card.id} index={index} title={card.title} />
               ))}
               {provided.placeholder}
-              <Textarea placeholder="Start making new card here" />
-              <Button fullWidth color="black" bg="blue.1" variant="light" mt="sm" leftSection={<IconPlus size={14} />}>
-                Add card
-              </Button>
+              <KanbanCreateCard />
             </Stack>
           </div>
         )}

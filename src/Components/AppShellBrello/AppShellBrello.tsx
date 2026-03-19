@@ -27,17 +27,17 @@ function AppShellBrello() {
       <AppShell.Header>
         <Space h="sm" />
         <Flex justify="space-between" align={"center"} style={{ padding: "10px 20px" }}>
-          <Burger onClick={toggleDesktop} visibleFrom="sm"></Burger>
-          <Burger onClick={toggleMobile} hiddenFrom="sm"></Burger>
+          <Burger onClick={toggleDesktop} visibleFrom="sm" opened={desktopOpened}></Burger>
+          <Burger onClick={toggleMobile} hiddenFrom="sm" opened={mobileOpened}></Burger>
           <div style={{ fontWeight: 700, fontSize: "20px" }}>Innovative Brellot 🤔😂🤣 </div>
           <div>
             <LightDarkButton />
           </div>
         </Flex>
         <Flex justify="left" align={"center"} style={{ padding: "10px 20px", gap: "10px" }}>
-          <Anchor style={{ color: theme.colors.dark[8], fontWeight: 700 }}>Board</Anchor>
-          <Anchor style={{ color: theme.colors.dark[8], fontWeight: 700 }}>Members</Anchor>
-          <Anchor style={{ color: theme.colors.dark[8], fontWeight: 700 }}>Settings</Anchor>
+          <Anchor style={{ color: theme.colors.gray[6], fontWeight: 700 }}>Board</Anchor>
+          <Anchor style={{ color: theme.colors.gray[6], fontWeight: 700 }}>Members</Anchor>
+          <Anchor style={{ color: theme.colors.gray[6], fontWeight: 700 }}>Settings</Anchor>
         </Flex>
         <AppShell.Navbar p="md" style={{ gap: "10px" }}>
           <Button>Кнопка 1</Button>
