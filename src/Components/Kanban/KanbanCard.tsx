@@ -39,16 +39,16 @@ function KanbanCard({ key, id, index, title }: { key: string; id: string; index:
           <Textarea defaultValue={editTitle} id="editTitle1" />
           <Space h="10px" />
           <Group gap="xs">
-            <ActionIcon onClick={handleChange}>
-              <Tooltip label="save">
+            <Tooltip label="save">
+              <ActionIcon onClick={handleChange}>
                 <IconCheck size={14} />
-              </Tooltip>
-            </ActionIcon>
-            <ActionIcon onClick={handleDelete}>
-              <Tooltip label="delete">
+              </ActionIcon>
+            </Tooltip>
+            <Tooltip label="delete">
+              <ActionIcon onClick={handleDelete}>
                 <IconX size={14} />
-              </Tooltip>
-            </ActionIcon>
+              </ActionIcon>
+            </Tooltip>
           </Group>
         </Paper>
       </div>
@@ -63,16 +63,16 @@ function KanbanCard({ key, id, index, title }: { key: string; id: string; index:
               <Text>{title}</Text>
               <Space h="10px" />
               <Group gap="xs">
-                <ActionIcon onClick={() => setEditMode(true)}>
-                  <Tooltip label="edit">
+                <Tooltip label="edit">
+                  <ActionIcon onClick={() => setEditMode(true)}>
                     <IconPencil size={14} />
-                  </Tooltip>
-                </ActionIcon>
-                <ActionIcon onClick={handleDelete}>
-                  <Tooltip label="delete">
+                  </ActionIcon>
+                </Tooltip>
+                <Tooltip label="delete">
+                  <ActionIcon onClick={handleDelete}>
                     <IconTrash size={14} />
-                  </Tooltip>
-                </ActionIcon>
+                  </ActionIcon>
+                </Tooltip>
               </Group>
             </Paper>
           </div>
