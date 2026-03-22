@@ -2,18 +2,23 @@
 import { useEffect, useState } from "react";
 
 import { Draggable } from "@hello-pangea/dnd";
-import { ActionIcon, Group, Paper, Space, Text, Textarea } from "@mantine/core";
+import { ActionIcon, Group, Paper, Space, Text, Textarea, Tooltip } from "@mantine/core";
 import { IconCheck, IconPencil, IconTrash, IconX } from "@tabler/icons-react";
-import { nanoid } from "nanoid";
 import { fromEvent, map } from "rxjs";
+
+import { cardDeleted, cardUpdated } from "./model";
 
 function KanbanCard({ key, id, index, title }: { key: string; id: string; index: number; title: string }) {
   const [editMode, setEditMode] = useState(false);
   const [editTitle, setEditTitle] = useState(title);
 
   function handleChange() {
-    console.log({ id: nanoid(), title: editTitle });
+    cardUpdated({ key: key, id: id, index: index, title: editTitle });
     setEditMode(false);
+  }
+
+  function handleDelete() {
+    cardDeleted(id);
   }
 
   useEffect(() => {
@@ -23,7 +28,6 @@ function KanbanCard({ key, id, index, title }: { key: string; id: string; index:
         .pipe(map((e: any) => e.target.value))
         .subscribe((data) => {
           setEditTitle(data);
-          console.log(editTitle);
         });
     }
   }, [editMode]);
@@ -36,14 +40,14 @@ function KanbanCard({ key, id, index, title }: { key: string; id: string; index:
           <Space h="10px" />
           <Group gap="xs">
             <ActionIcon onClick={handleChange}>
-              <IconCheck size={14} />
+              <Tooltip label="save">
+                <IconCheck size={14} />
+              </Tooltip>
             </ActionIcon>
-            <ActionIcon
-              onClick={() => {
-                alert("щас удалю карточку");
-              }}
-            >
-              <IconX size={14} />
+            <ActionIcon onClick={handleDelete}>
+              <Tooltip label="delete">
+                <IconX size={14} />
+              </Tooltip>
             </ActionIcon>
           </Group>
         </Paper>
@@ -60,14 +64,14 @@ function KanbanCard({ key, id, index, title }: { key: string; id: string; index:
               <Space h="10px" />
               <Group gap="xs">
                 <ActionIcon onClick={() => setEditMode(true)}>
-                  <IconPencil size={14} />
+                  <Tooltip label="edit">
+                    <IconPencil size={14} />
+                  </Tooltip>
                 </ActionIcon>
-                <ActionIcon
-                  onClick={() => {
-                    alert("щас удалю карточку");
-                  }}
-                >
-                  <IconTrash size={14} />
+                <ActionIcon onClick={handleDelete}>
+                  <Tooltip label="delete">
+                    <IconTrash size={14} />
+                  </Tooltip>
                 </ActionIcon>
               </Group>
             </Paper>

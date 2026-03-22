@@ -1,36 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect } from "react";
-
 import { Button, Textarea } from "@mantine/core";
 import { IconPlus } from "@tabler/icons-react";
-import { nanoid } from "nanoid";
-import { fromEvent, map } from "rxjs";
 
-let textArea1: string;
+import { cardCreateClicked } from "./model";
 
-function KanbanCreateCard() {
+function KanbanCreateCard({ title }: any) {
   function handleSubmit(e: any) {
     e.preventDefault();
 
-    const newCard = { id: nanoid(), title: textArea1 };
-    console.log(newCard);
-
+    cardCreateClicked({ card: { id: "", title: e.target.textArea1.value }, columnTitle: title });
     e.target.textArea1.value = "";
   }
-
-  useEffect(() => {
-    const textArea1_: any = document.getElementById("textArea1");
-    fromEvent(textArea1_, "change")
-      .pipe(map((e: any) => e.target.value))
-      .subscribe((data) => {
-        textArea1 = data;
-      });
-  }, []);
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Textarea placeholder="Start making new card here" id="textArea1" required />
+        <Textarea placeholder="Start making new card here" id="textArea1" name="textArea1" required />
         <Button
           type="submit"
           fullWidth

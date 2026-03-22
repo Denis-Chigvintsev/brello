@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 
 // vite.config.ts
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react({ babel: { babelrc: true } })],
   css: {
     modules: {
       localsConvention: "camelCase",

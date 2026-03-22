@@ -6,7 +6,7 @@ import KanbanCard from "./KanbanCard";
 import KanbanCreateCard from "./KanbanCreateCard";
 
 function KanbanColumn({ id, cards, title, color }: KanbanList) {
-  console.log(id);
+  console.log(1000800, id, cards, title, color);
   return (
     <Paper p="md" bg={color} radius="md" w="100%">
       <Title order={4} mb="md">
@@ -20,7 +20,7 @@ function KanbanColumn({ id, cards, title, color }: KanbanList) {
                 <KanbanCard key={card.id} id={card.id} index={index} title={card.title} />
               ))}
               {provided.placeholder}
-              <KanbanCreateCard />
+              <KanbanCreateCard title={title} />
             </Stack>
           </div>
         )}

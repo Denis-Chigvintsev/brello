@@ -1,39 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
-
 import { DragDropContext } from "@hello-pangea/dnd";
 import { Grid } from "@mantine/core";
-import { nanoid } from "nanoid";
+import { useUnit } from "effector-react";
 
-import type { KanbanList } from "../../miscellaneous/kanbanTypes";
 import KanbanColumn from "../Kanban/KanbanColumn";
-
-const INITIAL_BOARD: KanbanList[] = [
-  {
-    id: nanoid(),
-    title: "To Do",
-    cards: [
-      { id: nanoid(), title: "Setup the Workplace" },
-      { id: nanoid(), title: "Review opened issues" },
-    ],
-    color: "teal.5",
-  },
-  {
-    id: nanoid(),
-    title: "In Progress",
-    cards: [{ id: nanoid(), title: "Implement Kanban feature" }],
-    color: "grape.5",
-  },
-  {
-    id: nanoid(),
-    title: "Done",
-    cards: [{ id: nanoid(), title: "Initialized project" }],
-    color: "gray.7",
-  },
-];
+import { $board, boardUpdated } from "../Kanban/model";
 
 function Board() {
-  const [board, setBoard] = useState(INITIAL_BOARD);
+  const [board, setBoard] = useUnit([$board, boardUpdated]);
 
   function handleDragDrop(results: any) {
     console.log(results);
