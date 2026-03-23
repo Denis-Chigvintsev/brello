@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Droppable } from "@hello-pangea/dnd";
 import { /*type MantineColor,*/ Paper, Stack, Title } from "@mantine/core";
 
@@ -7,7 +6,7 @@ import KanbanCard from "./KanbanCard";
 import KanbanCreateCard from "./KanbanCreateCard";
 
 function KanbanColumn({ id, cards, title, color }: KanbanList) {
-  id = ""; // это чисто чтобы задобрить es lint - id колонки не используется здесь
+  console.log(10002000, id);
   return (
     <Paper p="md" bg={color} radius="md" w="100%">
       <Title order={4} mb="md">
