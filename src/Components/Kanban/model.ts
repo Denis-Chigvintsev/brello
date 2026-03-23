@@ -109,8 +109,12 @@ $board.on(cardCreateClicked, (board, { card, columnTitle }) => {
 
 $board.on(cardDeleted, (board, id) => {
   const updatedBoard = board.map((column) => {
+    let columnTitle;
     const index = column.cards.findIndex((card) => card.id == id);
-    column.cards.splice(index, 1);
+    if (index !== -1) {
+      columnTitle = column.title;
+    }
+    if (column.title == columnTitle) column.cards.splice(index, 1);
     return column;
   });
   return updatedBoard;

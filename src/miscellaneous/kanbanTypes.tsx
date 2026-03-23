@@ -7,6 +7,8 @@ export type KanbanList = {
   color: string;
 };
 
+export type KanbanListShort = Pick<KanbanList, "title" | "cards" | "color">;
+
 export type KanbanCard = {
   id: string;
   title: string;

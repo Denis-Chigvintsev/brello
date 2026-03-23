@@ -1,12 +1,11 @@
 import { Droppable } from "@hello-pangea/dnd";
 import { /*type MantineColor,*/ Paper, Stack, Title } from "@mantine/core";
 
-import type { KanbanList } from "../../miscellaneous/kanbanTypes";
+import type { KanbanListShort } from "../../miscellaneous/kanbanTypes";
 import KanbanCard from "./KanbanCard";
 import KanbanCreateCard from "./KanbanCreateCard";
 
-function KanbanColumn({ id, cards, title, color }: KanbanList) {
-  console.log(10002000, id);
+function KanbanColumn({ cards, title, color }: KanbanListShort) {
   return (
     <Paper p="md" bg={color} radius="md" w="100%">
       <Title order={4} mb="md">

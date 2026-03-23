@@ -60,7 +60,7 @@ function Board() {
       <Grid w="100%" justify="space-around">
         {board.map((column) => (
           <Grid.Col span="auto" miw="250px">
-            <KanbanColumn id={column.id} cards={column.cards} title={column.title} color={column.color} />
+            <KanbanColumn cards={column.cards} title={column.title} color={column.color} />
           </Grid.Col>
         ))}
       </Grid>
